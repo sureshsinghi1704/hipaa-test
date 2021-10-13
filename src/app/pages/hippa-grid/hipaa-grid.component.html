@@ -1,0 +1,9 @@
+<span class="add-hipaa">
+  HIPAA
+  <button nz-button nzType="primary" (click)="onAddEdit()">
+    <span>+</span>
+  </button>
+</span>
+<div class="hipaa-grid">
+  <app-data-grid [rowData]="rowData" [cols]="cols"></app-data-grid>
+</div>
