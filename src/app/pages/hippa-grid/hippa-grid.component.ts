@@ -1,3 +1,4 @@
+import { FileAttachmentComponent } from './../../shared/file-attachment/file-attachment.component';
 import { AddEditHipaaDataComponent } from './../../shared/add-edit-hipaa-data/add-edit-hipaa-data.component';
 import { ViewAttachmentComponent } from './../../shared/view-attachment/view-attachment.component';
 import { HippService } from './../../service/hipp.service';
@@ -51,17 +52,15 @@ export class HippaGridComponent implements OnInit {
       nzContent: ViewAttachmentComponent,
       nzFooter: null,
       nzComponentParams: { url: data.pdf },
-      // To send particular insurance info
     });
   }
 
   onAttach(data: any) {
     const modal = this.modal.create({
       nzTitle: 'View HIPPA Consent Attachment',
-      nzContent: ViewAttachmentComponent,
-      nzFooter: null,
-      nzComponentParams: { url: data.pdf },
-      // To send particular insurance info
+      nzContent: FileAttachmentComponent,
+      nzOkText: 'OK',
+      nzCancelText: 'Cancel'
     });
   }
 
@@ -72,7 +71,6 @@ export class HippaGridComponent implements OnInit {
       nzFooter: null,
       nzMaskClosable: false,
       nzComponentParams: { data: data && data.data, isEdit: !!data },
-      // To send particular insurance info
     });
 
     modal.afterClose.pipe(filter((value) => value)).subscribe((value) => {

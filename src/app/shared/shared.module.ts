@@ -1,3 +1,4 @@
+import { FileAttachmentComponent } from './file-attachment/file-attachment.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,6 +16,7 @@ import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
 import { AddEditHipaaDataComponent } from './add-edit-hipaa-data/add-edit-hipaa-data.component';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
 
 
 @NgModule({
@@ -23,6 +25,7 @@ import { AddEditHipaaDataComponent } from './add-edit-hipaa-data/add-edit-hipaa-
     IconButtonComponent,
     DateComponent,
     ViewAttachmentComponent,
+    FileAttachmentComponent,
     AddEditHipaaDataComponent
   ],
   imports: [
@@ -36,7 +39,8 @@ import { AddEditHipaaDataComponent } from './add-edit-hipaa-data/add-edit-hipaa-
     ReactiveFormsModule,
     NzDatePickerModule,
     NgxDocViewerModule,
-    NzButtonModule
+    NzButtonModule,
+    NzUploadModule
   ],
   exports: [
     DataGridComponent
