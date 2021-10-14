@@ -22,12 +22,12 @@ export class HippService {
   }
 
   updateData(id: number, value: any) {
-    this.data[id] = { id: id, ...value, pdf: './assets/test.pdf', status: 'Active' };
+    this.data[id] = { id: id, ...value, pdf: './assets/display-pdf.pdf', status: 'Active' };
     this.getGridData();
   }
 
   insertData(value: any) {
-    this.data.push({ id: this.data.length, ...value, pdf: './assets/test.pdf', status: 'Active' });
+    this.data.push({ id: this.data.length, ...value, pdf: './assets/display-pdf.pdf', status: 'Active' });
     this.getGridData();
   }
 }
