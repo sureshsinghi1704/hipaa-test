@@ -71,13 +71,13 @@ export class HippaGridComponent implements OnInit {
       nzContent: AddEditHipaaDataComponent,
       nzFooter: null,
       nzMaskClosable: false,
-      nzComponentParams: { data, isEdit: !!data },
+      nzComponentParams: { data: data && data.data, isEdit: !!data },
       // To send particular insurance info
     });
 
     modal.afterClose.pipe(filter((value) => value)).subscribe((value) => {
       if (data) {
-        this.hippService.updateData(0, value);
+        this.hippService.updateData(data.rowIndex, value);
       } else {
         this.hippService.insertData(value);
       }
